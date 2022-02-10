@@ -1,31 +1,20 @@
 import Page from './page';
+const selectors = {
+  signinButton: '//*[@id="ybar-inner-wrap"]/div[3]/div/div[3]/div[1]/div/a',
+  loginField: '//*[@id="login-username"]',
+  nextButton: '//*[@id="login-signin"]',
+  passwordField: '//*[@id="login-passwd"]',
+  mailButton: '//*[@id="ybarMailLink"]/span[1]',
+  profileButton: '#ybarAccountMenuOpener',
+  logoffButton: '//*[@id="profile-signout-link"]',
+  };
 class LoginPage extends Page {
-  get signinButton() {
-  return $('//*[@id="ybar-inner-wrap"]/div[3]/div/div[3]/div[1]/div/a');
-  }
-  get loginButton() {
-  return $('//*[@id="login-username"]');
-  }
-  get nextButton() {
-  return $('//*[@id="login-signin"]');
-  }
-  get passwordButton() {
-  return $('//*[@id="login-passwd"]');
-  }
-  get nextButton2() {
-  return $('//*[@id="login-signin"]');
-  }
-  get mailButton() {
-  return $('//*[@id="ybarMailLink"]/span[1]');
-  }
-  async open () {
-  await browser.url('https://www.yahoo.com/');
-  }
-  async inputLogin (value) {
-  await this.loginButton.setValue(value);
-  }
-  async inputPassword (value) {
-  await this.passwordButton.setValue(value);
-  }
+  get signinButton() { return $(selectors.signinButton); }
+  get loginField() { return $(selectors.loginField); }
+  get nextButton() { return $(selectors.nextButton); }
+  get passwordField() { return $(selectors.passwordField); }
+  get mailButton() { return $(selectors.mailButton); }
+  get profileButton() { return $(selectors.profileButton); }
+  get logoffButton() { return $(selectors.logoffButton); }
   }
 export default new LoginPage();

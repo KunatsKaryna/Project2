@@ -1,43 +1,27 @@
+
 import Page from './page';
+const selectors = {
+  draftButton: '//span[@data-test-folder-name="Draft"]',
+  draftLetter: '//span[@title="test12082011@yahoo.com"][1]',
+  draftWhom: '[data-test-id="pill-text"]',
+  draftTheme: '//input[@data-test-id="compose-subject"]',
+  draftBody: '//*[@id="editor-container"]/div[1]',
+  letterWhom: '//div[@data-test-id="pill"]',
+  letterTheme: '//input[@data-test-id="compose-subject"]',
+  sendButton: '//button[@data-test-id="compose-send-button"]',
+  draftMail: '//span[@title="test12082011@yahoo.com"][1]',
+  sentButton: '//a[@data-test-folder-name="Sent"]',
+  sentLetter: '//span[@data-test-id="message-subject"]', 
+  }
 class DraftPage extends Page {
-  get draftButton() {
-  return $('//span[@data-test-folder-name="Draft"]');
-  }
-  get draftLetter() {
-  return $('//span[@title="test12082011@yahoo.com"][1]');
-  }
-  get draftWhom() {
-  return ('//div[data-test-id="pill-text"]');
-  }
-  get draftTheme() {
-  return $('//input[@data-test-id="compose-subject"]');
-  }
-  get draftBody() {
-  return $('//*[@id="editor-container"]/div[1]');
-  }
-  get sendButton() {
-  return $('//button[@data-test-id="compose-send-button"]');
-  }  
-  get draftMail() {
-  return $('//span[@title="test12082011@yahoo.com"][1]');
-  }
-  get sentButton() {
-  return $('//a[@data-test-folder-name="Sent"]'); 
-  }
-  get letter() {
-  return $('//span[@data-test-id="message-subject"]');
-  }
-  async whom (value) {
-  await this.draftWhom.getAttribute(value);
-  }
-  async theme (value) {
-  await this.draftTheme.getAttribute(value);
-  }
-  async body (value) {
-  await this.draftBody.getAttribute(value);
-  }
-  async draftDisappear (value) {
-  await this.draftMail.isDisplayed(value);
-  }
+  get draftButton() { return $(selectors.draftButton); }
+  get draftLetter() { return $(selectors.draftLetter); }
+  get draftWhom() { return $(selectors.draftWhom); }
+  get draftTheme() { return $(selectors.draftTheme); }
+  get draftBody() { return $(selectors.draftBody); }
+  get sendButton() { return $(selectors.sendButton); }  
+  get draftMail() { return $(selectors.draftMail); }
+  get sentButton() { return $(selectors.sentButton); }
+  get sentLetter() { return $(selectors.sentLetter); }
   }
 export default new DraftPage();

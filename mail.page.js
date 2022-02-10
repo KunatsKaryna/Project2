@@ -1,25 +1,14 @@
 import Page from './page';
+const selectors = {
+  writeButton: '//*[@id="app"]/div[2]/div/div[1]/nav/div/div[1]/a',
+  whomField: '//*[@id="message-to-field"]',
+  themeField: '//input[@data-test-id="compose-subject"]',
+  bodyField: '//*[@id="editor-container"]/div[1]',
+  };
 class MailPage extends Page {  
-  get writeButton() {
-  return $('//*[@id="app"]/div[2]/div/div[1]/nav/div/div[1]/a');
-  }
-  get whomField() {
-  return $('//*[@id="message-to-field"]');
-  }
-  get themeField() {
-  return $('//input[@data-test-id="compose-subject"]');
-  } 
-  get bodyField() {
-  return $('//*[@id="editor-container"]/div[1]');
-  }
-  async inputWhom (value) {
-  await this.whomField.setValue(value);
-  }
-  async inputTheme (value) {
-  await this.themeField.setValue(value);
-  }
-  async inputBody (value) {
-  await this.bodyField.setValue(value);
-  }
+  get writeButton() { return $(selectors.writeButton); }
+  get whomField() { return $(selectors.whomField); }
+  get themeField() { return $(selectors.themeField); } 
+  get bodyField() { return $(selectors.bodyField); }
   }
 export default new MailPage();
