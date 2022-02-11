@@ -7,8 +7,11 @@ const selectors = {
   };
 class MailPage extends Page {  
   get writeButton() { return $(selectors.writeButton); }
+
   get whomField() { return $(selectors.whomField); }
-  get themeField() { return $(selectors.themeField); } 
+
+  get themeField() { return $(selectors.themeField); }
+   
   get bodyField() { return $(selectors.bodyField); }
   }
 export default new MailPage();

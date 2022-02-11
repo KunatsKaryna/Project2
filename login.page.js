@@ -10,11 +10,17 @@ const selectors = {
   };
 class LoginPage extends Page {
   get signinButton() { return $(selectors.signinButton); }
+
   get loginField() { return $(selectors.loginField); }
+
   get nextButton() { return $(selectors.nextButton); }
+
   get passwordField() { return $(selectors.passwordField); }
+
   get mailButton() { return $(selectors.mailButton); }
+
   get profileButton() { return $(selectors.profileButton); }
+  
   get logoffButton() { return $(selectors.logoffButton); }
   }
 export default new LoginPage();

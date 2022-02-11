@@ -15,13 +15,21 @@ const selectors = {
   }
 class DraftPage extends Page {
   get draftButton() { return $(selectors.draftButton); }
+
   get draftLetter() { return $(selectors.draftLetter); }
+
   get draftWhom() { return $(selectors.draftWhom); }
+
   get draftTheme() { return $(selectors.draftTheme); }
+
   get draftBody() { return $(selectors.draftBody); }
+
   get sendButton() { return $(selectors.sendButton); }  
+
   get draftMail() { return $(selectors.draftMail); }
+
   get sentButton() { return $(selectors.sentButton); }
+  
   get sentLetter() { return $(selectors.sentLetter); }
   }
 export default new DraftPage();
